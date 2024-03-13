@@ -8,31 +8,45 @@
     (input)="passwordStrengthValidator($event)"
   />
 
-  <div
-    [ngClass]="{
-      resultsEmpty: passwordStrength === 'EMPTY',
-      'bg-danger': passwordStrength === 'NOT_APPLICABLE',
-      resultsEasy: passwordStrength === 'EASY',
-      'bg-success': passwordStrength === 'STRONG'
-    }"
-  >
+  <div class="conditions-container">
     <div
       class="passwordCondition"
       [ngClass]="{
-        passwordEasy: passwordStrength === 'EASY', 
-        'bg-warning': passwordStrength === 'MEDIUM',
+        resultsEmpty: passwordStrength === 'EMPTY',
+        'bg-danger': passwordStrength === 'NOT_APPLICABLE',
+        passwordEasy: passwordStrength === 'EASY',
+        'bg-success': passwordStrength === 'STRONG',
+        resultMedium: passwordStrength === 'MEDIUM',
+        resultStrong: passwordStrength === 'STRONG',
+
       }"
     >
       1. Only letters/digits/symbols - the password is easy;
     </div>
     <div
       class="passwordCondition"
-      [ngClass]="{ 'bg-warning': passwordStrength === 'MEDIUM' }"
+      [ngClass]="{
+        resultsEmpty: passwordStrength === 'EMPTY',
+        'bg-danger': passwordStrength === 'NOT_APPLICABLE',
+        resultsEasy: passwordStrength === 'EASY',
+        resultMedium: passwordStrength === 'MEDIUM',
+        resultStrong: passwordStrength === 'STRONG',
+      }"
     >
       2. Combination of letters-symbols/letters-digits/digits-symbols - the
       password is medium;
     </div>
-    <div class="passwordCondition">
+    <div
+      class="passwordCondition"
+      [ngClass]="{
+        resultsEmpty: passwordStrength === 'EMPTY',
+        'bg-danger': passwordStrength === 'NOT_APPLICABLE',
+        resultsEasy: passwordStrength === 'EASY',
+        resultMediumUnique: passwordStrength === 'MEDIUM',
+        resultStrong: passwordStrength === 'STRONG',
+
+      }"
+    >
       3. Has letters, symbols and numbers - the password is strong;
     </div>
   </div>

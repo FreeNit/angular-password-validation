@@ -5,12 +5,23 @@
   align-items: center;
   row-gap: 5px;
 
+  & .conditions-container {
+    margin-top: 10px;
+  }
+
   & .passwordCondition {
     padding: 8px 7px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  }
+
+  & .passwordCondition:not(:last-child) {
+    margin-bottom: 15px;
   }
 
   & .passwordValue {
-    width: 30%;
+    max-width: 250px;
+    min-width: 100px;
   }
 
   & .resultsEmpty {
@@ -18,19 +29,23 @@
   }
 
   & .resultsEasy {
-    background-color: #cccccc;
+    background-color: #e7e7e7;
   }
 
   & .passwordEasy {
-    background-color: tomato;
+    background-color: #F2DEDE;
   }
 
   & .resultMedium {
-    background-color: #ffa500;
+    background-color: #f8fdaf;
+  }
+
+  & .resultMediumUnique {
+    background-color: #e7e7e7;
   }
 
   & .resultStrong {
-    background-color: #04AE9E;
+    background-color: #50c878;
   }
 
 
