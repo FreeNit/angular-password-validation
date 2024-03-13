@@ -1,0 +1,43 @@
+.input-password-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+
+  & .passwordCondition {
+    padding: 8px 7px;
+  }
+
+  & .passwordValue {
+    width: 30%;
+  }
+
+  & .resultsEmpty {
+    background-color: #e7e7e7;
+  }
+
+  & .resultsEasy {
+    background-color: #cccccc;
+  }
+
+  & .passwordEasy {
+    background-color: tomato;
+  }
+
+  & .resultMedium {
+    background-color: #ffa500;
+  }
+
+  & .resultStrong {
+    background-color: #04AE9E;
+  }
+
+
+
+  & .resultNotApplicable {
+    background-color: tomato;
+  }
+
+
+}

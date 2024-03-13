@@ -1,0 +1,39 @@
+<div class="input-password-container">
+  <h3>Solution</h3>
+  <label for="password">Password</label>
+  <input
+    id="password"
+    type="text"
+    class="form-control passwordValue"
+    (input)="passwordStrengthValidator($event)"
+  />
+
+  <div
+    [ngClass]="{
+      resultsEmpty: passwordStrength === 'EMPTY',
+      'bg-danger': passwordStrength === 'NOT_APPLICABLE',
+      resultsEasy: passwordStrength === 'EASY',
+      'bg-success': passwordStrength === 'STRONG'
+    }"
+  >
+    <div
+      class="passwordCondition"
+      [ngClass]="{
+        passwordEasy: passwordStrength === 'EASY', 
+        'bg-warning': passwordStrength === 'MEDIUM',
+      }"
+    >
+      1. Only letters/digits/symbols - the password is easy;
+    </div>
+    <div
+      class="passwordCondition"
+      [ngClass]="{ 'bg-warning': passwordStrength === 'MEDIUM' }"
+    >
+      2. Combination of letters-symbols/letters-digits/digits-symbols - the
+      password is medium;
+    </div>
+    <div class="passwordCondition">
+      3. Has letters, symbols and numbers - the password is strong;
+    </div>
+  </div>
+</div>
