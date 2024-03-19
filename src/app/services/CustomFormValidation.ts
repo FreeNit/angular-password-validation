@@ -1,20 +1,29 @@
 import { PasswordStrength } from '../helpers/Constants';
+import { REG_EXP } from '../helpers/RegExp';
 
 export default class CustomFormValidation {
   checkPasswordStrength(
-    hasCharacter: boolean,
-    hasNumbers: boolean,
-    hasSpecials: boolean,
+    // hasCharacter: boolean,
+    // hasNumbers: boolean,
+    // hasSpecials: boolean,
     passwordValue: string
   ) {
+    const validationPassword: string = passwordValue.trim();
+
+    const { characters, numbers, symbols } = REG_EXP;
+
+    const hasCharacter = characters.test(validationPassword);
+    const hasNumbers = numbers.test(validationPassword);
+    const hasSpecials = symbols.test(validationPassword);
+
     let passwordStrength;
     // -> EMPTY password
-    if (!passwordValue) {
+    if (!validationPassword) {
       passwordStrength = PasswordStrength.Empty;
       return passwordStrength;
     }
     // -> NOT APPLICABLE password strength
-    if (passwordValue.length < 8) {
+    if (validationPassword.length < 8) {
       return PasswordStrength.NotApplicable;
     }
     // -> EASY password strength

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TaskdescriptionComponent } from './taskdescription/taskdescription.component';
 import { TasksolutionComponent } from './tasksolution/tasksolution.component';
 import { SolutionComponent } from './solution/solution.component';
+import { PassstrenghdetailsComponent } from './passstrenghdetails/passstrenghdetails.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SolutionComponent } from './solution/solution.component';
     TaskdescriptionComponent,
     TasksolutionComponent,
     SolutionComponent,
+    PassstrenghdetailsComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],

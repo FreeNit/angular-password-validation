@@ -1,29 +1,29 @@
 <div class="container-solution">
   <div class="row">
-    <div class="">
-      <h3 class="text-info">Solution 2</h3>
-      <form [formGroup]="signupForm">
-        <div class="form-group">
+    <h3 class="text-info">Solution 2</h3>
+    <form [formGroup]="signupForm">
+      <div formGroupName="userData">
+        <div class="">
           <label for="password">Password</label>
           <input
             type="text"
             id="password"
             class="form-control"
             formControlName="password"
-            #password=""
           />
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div>
-      <div>1. Only letters/digits/symbols - the password is easy;</div>
-      <div>
-        2. Combination of letters-symbols/letters-digits/digits-symbols - the
-        password is medium;
+        <div class="">
+          <div>1. Only letters/digits/symbols - the password is easy;</div>
+          <div>
+            2. Combination of letters-symbols/letters-digits/digits-symbols -
+            the password is medium;
+          </div>
+          <div>
+            3. Has letters, symbols and numbers - the password is strong;
+          </div>
+          <app-passstrenghdetails></app-passstrenghdetails>
+        </div>
       </div>
-      <div>3. Has letters, symbols and numbers - the password is strong;</div>
-    </div>
+    </form>
   </div>
 </div>

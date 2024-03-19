@@ -11,7 +11,14 @@ export class SolutionComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
-      password: new FormControl(null),
+      userData: new FormGroup({
+        password: new FormControl(null, [this.passwordStrength.bind(this)]),
+      }),
     });
+  }
+
+  passwordStrength(control: FormControl): { [s: string]: boolean } {
+    console.log(control.valid);
+    return null;
   }
 }
