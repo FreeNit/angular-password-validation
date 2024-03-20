@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TaskdescriptionComponent } from './taskdescription/taskdescription.component';
-import { TasksolutionComponent } from './tasksolution/tasksolution.component';
 import { SolutionComponent } from './solution/solution.component';
 import { PassstrenghdetailsComponent } from './passstrenghdetails/passstrenghdetails.component';
 
@@ -12,7 +11,6 @@ import { PassstrenghdetailsComponent } from './passstrenghdetails/passstrenghdet
   declarations: [
     AppComponent,
     TaskdescriptionComponent,
-    TasksolutionComponent,
     SolutionComponent,
     PassstrenghdetailsComponent,
   ],

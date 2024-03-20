@@ -1,60 +1,20 @@
 <div class="container-solution">
   <div class="row">
-    <h3 class="text-info">Solution 2</h3>
+    <h3 class="text-info">Solution</h3>
     <form [formGroup]="signupForm">
       <div class="">
         <label for="password">Password</label>
         <input
           type="text"
           id="password"
-          class="form-control"
+          class="form-control password-input"
           formControlName="password"
         />
       </div>
-      <div [ngClass]="passwordStrength" *ngIf="passwordFormField?.dirty">
-        <div
-          [ngStyle]="{
-            'background-color':
-              passwordStrength === 'EASY'
-                ? '#e48885'
-                : passwordStrength === 'MEDIUM'
-                ? '#f0ad4e'
-                : passwordStrength === 'STRONG'
-                ? '#5cb85c'
-                : null
-          }"
-        >
-          1. Only letters/digits/symbols - the password is easy;
-        </div>
-        <div
-          [ngStyle]="{
-            'background-color':
-              passwordStrength === 'EASY'
-                ? '#c1c1c1'
-                : passwordStrength === 'MEDIUM'
-                ? '#f0ad4e'
-                : passwordStrength === 'STRONG'
-                ? '#5cb85c'
-                : null
-          }"
-        >
-          2. Combination of letters-symbols/letters-digits/digits-symbols - the
-          password is medium;
-        </div>
-        <div
-          [ngStyle]="{
-            'background-color':
-              passwordStrength === 'EASY' || passwordStrength === 'MEDIUM'
-                ? '#c1c1c1'
-                : passwordStrength === 'STRONG'
-                ? '#5cb85c'
-                : null
-          }"
-        >
-          3. Has letters, symbols and numbers - the password is strong;
-        </div>
-        <!-- <app-passstrenghdetails></app-passstrenghdetails> -->
-      </div>
+      <app-passstrenghdetails
+        *ngIf="passwordFormField?.dirty"
+        [passwordStrength]="passwordStrength"
+      ></app-passstrenghdetails>
     </form>
   </div>
 </div>

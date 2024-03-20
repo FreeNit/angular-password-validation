@@ -1,7 +1,5 @@
-.EMPTY {
-  background: #C1c1c1;
-}
-
-.NOT_APPLICABLE {
-  background: #e48885;
+.password-input.form-control {
+  display: block;
+  margin: 5px auto;
+  width: 350px;
 }

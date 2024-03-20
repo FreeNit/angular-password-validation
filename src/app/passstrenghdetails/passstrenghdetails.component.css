@@ -1,0 +1,19 @@
+.conditions {
+  margin: 10px auto;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.condition-item {
+  margin: 3px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.EMPTY {
+  background: #C1c1c1;
+}
+
+.NOT_APPLICABLE {
+  background: #e48885;
+}

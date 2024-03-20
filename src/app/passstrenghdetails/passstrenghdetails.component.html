@@ -1,6 +1,46 @@
-<div>1. Only letters/digits/symbols - the password is easy;</div>
-<div>
-  2. Combination of letters-symbols/letters-digits/digits-symbols - the password
-  is medium;
+<div class="conditions" [ngClass]="passwordStrength">
+  <div
+    class="condition-item"
+    [ngStyle]="{
+      'background-color':
+        passwordStrength === 'EASY'
+          ? '#e48885'
+          : passwordStrength === 'MEDIUM'
+          ? '#f0ad4e'
+          : passwordStrength === 'STRONG'
+          ? '#5cb85c'
+          : null
+    }"
+  >
+    1. Only letters/digits/symbols - the password is easy;
+  </div>
+  <div
+    class="condition-item"
+    [ngStyle]="{
+      'background-color':
+        passwordStrength === 'EASY'
+          ? '#c1c1c1'
+          : passwordStrength === 'MEDIUM'
+          ? '#f0ad4e'
+          : passwordStrength === 'STRONG'
+          ? '#5cb85c'
+          : null
+    }"
+  >
+    2. Combination of letters-symbols/letters-digits/digits-symbols - the
+    password is medium;
+  </div>
+  <div
+    class="condition-item"
+    [ngStyle]="{
+      'background-color':
+        passwordStrength === 'EASY' || passwordStrength === 'MEDIUM'
+          ? '#c1c1c1'
+          : passwordStrength === 'STRONG'
+          ? '#5cb85c'
+          : null
+    }"
+  >
+    3. Has letters, symbols and numbers - the password is strong;
+  </div>
 </div>
-<div>3. Has letters, symbols and numbers - the password is strong;</div>
