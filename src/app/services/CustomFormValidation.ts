@@ -8,20 +8,19 @@ export default class CustomFormValidation {
     // hasSpecials: boolean,
     passwordValue: string
   ) {
-    const validationPassword: string = passwordValue.trim();
+    // -> EMPTY password
+    let passwordStrength;
+    if (!passwordValue) {
+      passwordStrength = PasswordStrength.Empty;
+      return passwordStrength;
+    }
 
+    const validationPassword: string = passwordValue?.trim();
     const { characters, numbers, symbols } = REG_EXP;
-
     const hasCharacter = characters.test(validationPassword);
     const hasNumbers = numbers.test(validationPassword);
     const hasSpecials = symbols.test(validationPassword);
 
-    let passwordStrength;
-    // -> EMPTY password
-    if (!validationPassword) {
-      passwordStrength = PasswordStrength.Empty;
-      return passwordStrength;
-    }
     // -> NOT APPLICABLE password strength
     if (validationPassword.length < 8) {
       return PasswordStrength.NotApplicable;
